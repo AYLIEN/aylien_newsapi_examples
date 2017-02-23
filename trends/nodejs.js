@@ -4,11 +4,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR_APP_ID";
+app_id.apiKey = "{{current_app_id}}";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR_APP_KEY";
+app_key.apiKey = "{{current_app_key}}";
 
 var field = "entities.title.links.dbpedia";
 

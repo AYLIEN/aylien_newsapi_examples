@@ -4,9 +4,9 @@ from datetime import datetime
 from pprint import pprint
 
 # Configure API key authorization: app_id
-aylien_news_api.configuration.api_key['X-AYLIEN-NewsAPI-Application-ID'] = 'YOUR_APP_ID'
+aylien_news_api.configuration.api_key['X-AYLIEN-NewsAPI-Application-ID'] = '{{current_app_id}}'
 # Configure API key authorization: app_key
-aylien_news_api.configuration.api_key['X-AYLIEN-NewsAPI-Application-Key'] = 'YOUR_APP_KEY'
+aylien_news_api.configuration.api_key['X-AYLIEN-NewsAPI-Application-Key'] = '{{current_app_key}}'
 
 # create an instance of the API class
 api_instance = aylien_news_api.DefaultApi()
