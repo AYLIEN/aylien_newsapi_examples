@@ -36,7 +36,10 @@ public class Main {
 
         try {
             Stories result = apiInstance.listStories(storiesBuilder.build());
-            System.out.println(result);
+            for (Iterator<Story> i = result.getStories().iterator(); i.hasNext();){
+                Story story = i.next();
+                System.out.println(story.getTitle() + " / " + story.getSource().getName());
+            }
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#listStories");
             e.printStackTrace();
