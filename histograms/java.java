@@ -1,0 +1,205 @@
+import com.aylien.newsapi.*;
+import com.aylien.newsapi.auth.*;
+import com.aylien.newsapi.models.*;
+import com.aylien.newsapi.parameters.*;
+import com.aylien.newsapi.api.DefaultApi;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+        // Configure API key authorization: app_id
+        ApiKeyAuth app_id = (ApiKeyAuth) defaultClient.getAuthentication("app_id");
+        app_id.setApiKey("{{current_app_id}}");
+
+        // Configure API key authorization: app_key
+        ApiKeyAuth app_key = (ApiKeyAuth) defaultClient.getAuthentication("app_key");
+        app_key.setApiKey("{{current_app_key}}");
+
+        DefaultApi apiInstance = new DefaultApi();
+
+        List<Long> id = Arrays.asList(985744L);
+        List<Long> notId = Arrays.asList(5241L, 4412L);
+        String title = "startup AND (raise OR raised OR raising OR raises)";
+        String body = "startup";
+        String text = "startup company";
+        List<String> language = Arrays.asList("en", "es", "es");
+        List<String> notLanguage = Arrays.asList("fr", "pt", "it");
+        String publishedAtStart = "NOW-3MONTHS/DAY";
+        String publishedAtEnd = "NOW-10DAYS";
+        String categoriesTaxonomy = "iab-qag";
+        Boolean categoriesConfident = true;
+        List<String> categoriesId = Arrays.asList("IAB15", "IAB13-1");
+        List<String> notCategoriesId = Arrays.asList("IAB3-2");
+        List<Integer> categoriesLevel = Arrays.asList(2);
+        List<Integer> notCategoriesLevel = Arrays.asList(1, 3);
+        List<String> entitiesTitleText = Arrays.asList("GNU/Linux", "Microsoft Windows");
+        List<String> notEntitiesTitleText = Arrays.asList("Ireland", "Dublin");
+        List<String> entitiesTitleType = Arrays.asList("Software", "Organization");
+        List<String> notEntitiesTitleType = Arrays.asList("Agent", "Person");
+        List<String> entitiesTitleLinksDbpedia = Arrays.asList("http://dbpedia.org/resource/Linux");
+        List<String> notEntitiesTitleLinksDbpedia = Arrays.asList("http://dbpedia.org/resource/Windows");
+        List<String> entitiesBodyText = Arrays.asList("GNU/Linux", "Microsoft Windows");
+        List<String> notEntitiesBodyText = Arrays.asList("Trump");
+        List<String> entitiesBodyType = Arrays.asList("Agent", "Person");
+        List<String> notEntitiesBodyType = Arrays.asList("Software", "Organization");
+        List<String> entitiesBodyLinksDbpedia = Arrays.asList("entitiesBodyLinksDbpedia_example");
+        List<String> notEntitiesBodyLinksDbpedia = Arrays.asList("http://dbpedia.org/resource/Linux");
+        String sentimentTitlePolarity = "negative";
+        String notSentimentTitlePolarity = "positive";
+        String sentimentBodyPolarity = "neutral";
+        String notSentimentBodyPolarity = "negative";
+        Integer mediaImagesCountMin = 2;
+        Integer mediaImagesCountMax = 4;
+        Integer mediaImagesWidthMin = 640;
+        Integer mediaImagesWidthMax = 1024;
+        Integer mediaImagesHeightMin = 480;
+        Integer mediaImagesHeightMax = 800;
+        Integer mediaImagesContentLengthMin = 25411;
+        Integer mediaImagesContentLengthMax = 369541;
+        List<String> mediaImagesFormat = Arrays.asList("JPEG", "BMP", "GIF");
+        List<String> notMediaImagesFormat = Arrays.asList("PNG", "TIFF");
+        Integer mediaVideosCountMin = 1;
+        Integer mediaVideosCountMax = 2;
+        List<Integer> authorId = Arrays.asList(36521);
+        List<Integer> notAuthorId = Arrays.asList(2541);
+        String authorName = "John Doe";
+        String notAuthorName = "Mike Wally";
+        List<Integer> sourceId = Arrays.asList(1411);
+        List<Integer> notSourceId = Arrays.asList(251);
+        List<String> sourceName = Arrays.asList("BBC");
+        List<String> notSourceName = Arrays.asList("Fox News");
+        List<String> sourceDomain = Arrays.asList("bbc.co.uk");
+        List<String> notSourceDomain = Arrays.asList("foxnews.com");
+        List<String> sourceLocationsCountry = Arrays.asList("US", "IE");
+        List<String> notSourceLocationsCountry = Arrays.asList("IR");
+        List<String> sourceLocationsState = Arrays.asList("California");
+        List<String> notSourceLocationsState = Arrays.asList("Arizona");
+        List<String> sourceLocationsCity = Arrays.asList("Los Angeles");
+        List<String> notSourceLocationsCity = Arrays.asList("Dublin City");
+        List<String> sourceScopesCountry = Arrays.asList("IE", "NG");
+        List<String> notSourceScopesCountry = Arrays.asList("US", "GB");
+        List<String> sourceScopesState = Arrays.asList("Co Dublin");
+        List<String> notSourceScopesState = Arrays.asList("Co Wicklow");
+        List<String> sourceScopesCity = Arrays.asList("Dublin City");
+        List<String> notSourceScopesCity = Arrays.asList("Cork");
+        List<String> sourceScopesLevel = Arrays.asList("national");
+        List<String> notSourceScopesLevel = Arrays.asList("local");
+        Integer sourceLinksInCountMin = 354211;
+        Integer sourceLinksInCountMax = 587412;
+        Integer sourceRankingsAlexaRankMin = 10;
+        Integer sourceRankingsAlexaRankMax = 2500;
+        List<String> sourceRankingsAlexaCountry = Arrays.asList("IE");
+        Integer socialSharesCountFacebookMin = 3521;
+        Integer socialSharesCountFacebookMax = 5841;
+        Integer socialSharesCountGooglePlusMin = 2514;
+        Integer socialSharesCountGooglePlusMax = 36521;
+        Integer socialSharesCountLinkedinMin = 6521;
+        Integer socialSharesCountLinkedinMax = 36521;
+        Integer socialSharesCountRedditMin = 14125;
+        Integer socialSharesCountRedditMax = 95412;
+        Integer intervalStart = 2500;
+        Integer intervalEnd = 200000;
+        Integer intervalWidth = 2000;
+        String field = "words_count";
+
+        HistogramsParams.Builder histogramsBuilder = HistogramsParams.newBuilder();
+
+        histogramsBuilder.setId(id);
+        histogramsBuilder.setNotId(notId);
+        histogramsBuilder.setTitle(title);
+        histogramsBuilder.setBody(body);
+        histogramsBuilder.setText(text);
+        histogramsBuilder.setLanguage(language);
+        histogramsBuilder.setNotLanguage(notLanguage);
+        histogramsBuilder.setPublishedAtStart(publishedAtStart);
+        histogramsBuilder.setPublishedAtEnd(publishedAtEnd);
+        histogramsBuilder.setCategoriesTaxonomy(categoriesTaxonomy);
+        histogramsBuilder.setCategoriesConfident(categoriesConfident);
+        histogramsBuilder.setCategoriesId(categoriesId);
+        histogramsBuilder.setNotCategoriesId(notCategoriesId);
+        histogramsBuilder.setCategoriesLevel(categoriesLevel);
+        histogramsBuilder.setNotCategoriesLevel(notCategoriesLevel);
+        histogramsBuilder.setEntitiesTitleText(entitiesTitleText);
+        histogramsBuilder.setNotEntitiesTitleText(notEntitiesTitleText);
+        histogramsBuilder.setEntitiesTitleType(entitiesTitleType);
+        histogramsBuilder.setNotEntitiesTitleType(notEntitiesTitleType);
+        histogramsBuilder.setEntitiesTitleLinksDbpedia(entitiesTitleLinksDbpedia);
+        histogramsBuilder.setNotEntitiesTitleLinksDbpedia(notEntitiesTitleLinksDbpedia);
+        histogramsBuilder.setEntitiesBodyText(entitiesBodyText);
+        histogramsBuilder.setNotEntitiesBodyText(notEntitiesBodyText);
+        histogramsBuilder.setEntitiesBodyType(entitiesBodyType);
+        histogramsBuilder.setNotEntitiesBodyType(notEntitiesBodyType);
+        histogramsBuilder.setEntitiesBodyLinksDbpedia(entitiesBodyLinksDbpedia);
+        histogramsBuilder.setNotEntitiesBodyLinksDbpedia(notEntitiesBodyLinksDbpedia);
+        histogramsBuilder.setSentimentTitlePolarity(sentimentTitlePolarity);
+        histogramsBuilder.setNotSentimentTitlePolarity(notSentimentTitlePolarity);
+        histogramsBuilder.setSentimentBodyPolarity(sentimentBodyPolarity);
+        histogramsBuilder.setNotSentimentBodyPolarity(notSentimentBodyPolarity);
+        histogramsBuilder.setMediaImagesCountMin(mediaImagesCountMin);
+        histogramsBuilder.setMediaImagesCountMax(mediaImagesCountMax);
+        histogramsBuilder.setMediaImagesWidthMin(mediaImagesWidthMin);
+        histogramsBuilder.setMediaImagesWidthMax(mediaImagesWidthMax);
+        histogramsBuilder.setMediaImagesHeightMin(mediaImagesHeightMin);
+        histogramsBuilder.setMediaImagesHeightMax(mediaImagesHeightMax);
+        histogramsBuilder.setMediaImagesContentLengthMin(mediaImagesContentLengthMin);
+        histogramsBuilder.setMediaImagesContentLengthMax(mediaImagesContentLengthMax);
+        histogramsBuilder.setMediaImagesFormat(mediaImagesFormat);
+        histogramsBuilder.setNotMediaImagesFormat(notMediaImagesFormat);
+        histogramsBuilder.setMediaVideosCountMin(mediaVideosCountMin);
+        histogramsBuilder.setMediaVideosCountMax(mediaVideosCountMax);
+        histogramsBuilder.setAuthorId(authorId);
+        histogramsBuilder.setNotAuthorId(notAuthorId);
+        histogramsBuilder.setAuthorName(authorName);
+        histogramsBuilder.setNotAuthorName(notAuthorName);
+        histogramsBuilder.setSourceId(sourceId);
+        histogramsBuilder.setNotSourceId(notSourceId);
+        histogramsBuilder.setSourceName(sourceName);
+        histogramsBuilder.setNotSourceName(notSourceName);
+        histogramsBuilder.setSourceDomain(sourceDomain);
+        histogramsBuilder.setNotSourceDomain(notSourceDomain);
+        histogramsBuilder.setSourceLocationsCountry(sourceLocationsCountry);
+        histogramsBuilder.setNotSourceLocationsCountry(notSourceLocationsCountry);
+        histogramsBuilder.setSourceLocationsState(sourceLocationsState);
+        histogramsBuilder.setNotSourceLocationsState(notSourceLocationsState);
+        histogramsBuilder.setSourceLocationsCity(sourceLocationsCity);
+        histogramsBuilder.setNotSourceLocationsCity(notSourceLocationsCity);
+        histogramsBuilder.setSourceScopesCountry(sourceScopesCountry);
+        histogramsBuilder.setNotSourceScopesCountry(notSourceScopesCountry);
+        histogramsBuilder.setSourceScopesState(sourceScopesState);
+        histogramsBuilder.setNotSourceScopesState(notSourceScopesState);
+        histogramsBuilder.setSourceScopesCity(sourceScopesCity);
+        histogramsBuilder.setNotSourceScopesCity(notSourceScopesCity);
+        histogramsBuilder.setSourceScopesLevel(sourceScopesLevel);
+        histogramsBuilder.setNotSourceScopesLevel(notSourceScopesLevel);
+        histogramsBuilder.setSourceLinksInCountMin(sourceLinksInCountMin);
+        histogramsBuilder.setSourceLinksInCountMax(sourceLinksInCountMax);
+        histogramsBuilder.setSourceRankingsAlexaRankMin(sourceRankingsAlexaRankMin);
+        histogramsBuilder.setSourceRankingsAlexaRankMax(sourceRankingsAlexaRankMax);
+        histogramsBuilder.setSourceRankingsAlexaCountry(sourceRankingsAlexaCountry);
+        histogramsBuilder.setSocialSharesCountFacebookMin(socialSharesCountFacebookMin);
+        histogramsBuilder.setSocialSharesCountFacebookMax(socialSharesCountFacebookMax);
+        histogramsBuilder.setSocialSharesCountGooglePlusMin(socialSharesCountGooglePlusMin);
+        histogramsBuilder.setSocialSharesCountGooglePlusMax(socialSharesCountGooglePlusMax);
+        histogramsBuilder.setSocialSharesCountLinkedinMin(socialSharesCountLinkedinMin);
+        histogramsBuilder.setSocialSharesCountLinkedinMax(socialSharesCountLinkedinMax);
+        histogramsBuilder.setSocialSharesCountRedditMin(socialSharesCountRedditMin);
+        histogramsBuilder.setSocialSharesCountRedditMax(socialSharesCountRedditMax);
+        histogramsBuilder.setIntervalStart(intervalStart);
+        histogramsBuilder.setIntervalEnd(intervalEnd);
+        histogramsBuilder.setIntervalWidth(intervalWidth);
+        histogramsBuilder.setField(field);
+
+        try {
+            Histograms result = apiInstance.listHistograms(histogramsBuilder.build());
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#listHistograms");
+            e.printStackTrace();
+        }
+    }
+}
