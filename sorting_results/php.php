@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: app_id
 Aylien\NewsApi\Configuration::getDefaultConfiguration()->setApiKey('X-AYLIEN-NewsAPI-Application-ID', '{{current_app_id}}');
